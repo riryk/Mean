@@ -36,8 +36,14 @@ https://coursetro.com/posts/code/84/Setting-up-an-Angular-4-MEAN--Stack-%28Tutor
 11. Start node server in watch mode:
 
     npm install -g nodemon
-    nodemon ./server.js --watch ../
-    nodemon ./server.js --watch ../ --inspect    in inspect mode
+    nodemon ./server/server.js --watch ../
+    nodemon ./server/server.js --watch ../ --inspect    in inspect mode
+
+12. Build project: 
+    
+    ng build
+    npm run build
+    ng build -op dist -wg     build with watch
 
     
 

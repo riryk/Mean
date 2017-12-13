@@ -5,13 +5,18 @@ const MongoClient = require('mongodb').MongoClient;
 
 const connectToDatabase = (query, response) => {
     return MongoClient.connect('mongodb://localhost:27017', (error, client) => {
-        if (error) {
-            writeErrorToResponse(error, response);
-        } 
-
-        const database = client.db('mean');
-        query(database);
+        if (!returnIfError(error, response)) {
+            const database = client.db('mean');
+            query(database);    
+        }
     });
+};
+
+const returnIfError = (error, response) => {
+    if (error) {
+        writeErrorToResponse(error, response);
+    }
+    return error;
 };
 
 let defaultResponse = {

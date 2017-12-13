@@ -1,0 +1,1 @@
+nodemon ./server/server.js --watch server --inspect
