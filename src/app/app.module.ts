@@ -4,14 +4,19 @@ import { AppComponent } from './app.component';
 
 import { HttpModule } from '@angular/http';
 import { UserService } from './data/user.service';
+import { UserModule } from '../';
+
+import { UserWrapComponent } from './components';
 
 @NgModule({
-    declarations: [
-        AppComponent
-    ],
     imports: [
         BrowserModule,
-        HttpModule
+        HttpModule,
+        UserModule
+    ],
+    declarations: [
+        AppComponent,
+        UserWrapComponent
     ],
     providers: [UserService],
     bootstrap: [AppComponent]

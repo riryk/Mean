@@ -1,1 +1,1 @@
-ng build -op dist -w
+ng build --watch --poll
