@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpUserService } from './http-services/http-user-service';
+import { HttpUserService } from './http-services';
+import { User } from './models';
 
 @Component({
     selector: 'user',
@@ -8,6 +9,7 @@ import { HttpUserService } from './http-services/http-user-service';
 })
 export class UserComponent implements OnInit {
     users: Array<any>;
+    newUser: User;
 
     constructor(private userService: HttpUserService) {}
 

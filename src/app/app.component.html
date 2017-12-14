@@ -1,5 +1,14 @@
-<h1>Test</h1>
-
-<ul>
-  <li *ngFor="let user of users">{{ user.name }}</li>
-</ul>
+<div class="app-component">
+   <ul class="c-tabs">
+        <li class="c-tab-item">
+            <a class="c-tab-item-link" 
+               routerLink="/" 
+               routerLinkActive="c-tab-item-link-active">
+               User
+            </a>
+        </li>
+   </ul>
+   <div class="app-component-content">
+        <router-outlet></router-outlet>
+   </div>
+</div>

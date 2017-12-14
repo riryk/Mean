@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { routing } from './app.routes';
 
 import { HttpModule } from '@angular/http';
-import { UserService } from './data/user.service';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 import { UserModule } from '../';
 
 import { UserWrapComponent } from './components';
@@ -12,13 +14,19 @@ import { UserWrapComponent } from './components';
     imports: [
         BrowserModule,
         HttpModule,
-        UserModule
+        UserModule,
+        routing,
+        StoreModule.forRoot({
+            routerReducer: () => {
+            }
+        }),
+        EffectsModule.forRoot([])
     ],
     declarations: [
         AppComponent,
         UserWrapComponent
     ],
-    providers: [UserService],
+    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
