@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpUserService } from '../../http-services';
+import { Observable } from 'rxjs/Observable';
 import { User } from '../../models';
 
 @Component({

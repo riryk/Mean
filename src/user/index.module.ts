@@ -20,14 +20,16 @@ import { UserListComponent } from './components';
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
-        StoreModule.forFeature('user', userReducer),
+        StoreModule.forFeature('users', userReducer),
         EffectsModule.forFeature(userEffects)
     ],
     declarations: [
         UserComponent,
+        UserListComponent
     ],
     exports: [
-        UserComponent
+        UserComponent,
+        UserListComponent
     ],
     providers: [
         HttpUserService 

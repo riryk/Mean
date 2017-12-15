@@ -19,8 +19,14 @@ https://coursetro.com/posts/code/84/Setting-up-an-Angular-4-MEAN--Stack-%28Tutor
 
 7. Create database:
 
+   mongo
    use mean
    db.users.insert({"name":"John Doe"})
+   db.users.find();                      list all users  
+   db.users.remove({});                  remove all items  
+
+   db.users.insert({"firtName": "John", "lastName": "Doe"});
+   db.users.insert({"firtName": "Jonathan", "lastName": "Perchuk"});
 
 8. install mongo package: 
 

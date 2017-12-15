@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpUserService } from './http-services';
 import { User } from './models';
+import { Store } from '@ngrx/store';
+import * as user from './declarations/actions';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'user',
@@ -8,13 +10,14 @@ import { User } from './models';
     styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-    users: Array<any>;
-    newUser: User;
+    public users: Observable<User[]>;
 
-    constructor(private userService: HttpUserService) {}
+    constructor(private store: Store<any>) {
+        this.users = store.select('users')
+            .map((state) => state.users);
+    }
 
     public ngOnInit() {
-    	this.userService.getUsers()
-            .subscribe(users => this.users = users);
+        this.store.dispatch(new user.LoadUsersAction());
     }
 }
