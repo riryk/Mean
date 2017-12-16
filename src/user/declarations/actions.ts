@@ -5,9 +5,9 @@ export const LoadUsers = 'Users load';
 export const LoadUsersSuccess = 'Users load success';
 export const LoadUsersFailed = 'Users load failed';
 
-export const AddUser = 'Users load';
-export const AddUserSuccess = 'Users load success';
-export const AddUserFailed = 'Users load failed';
+export const AddUser = 'User add';
+export const AddUserSuccess = 'User add success';
+export const AddUserFailed = 'User add failed';
 
 export class LoadUsersAction implements Action {
     readonly type = LoadUsers;

@@ -1,1 +1,2 @@
-mongod --dbpath D:\projects\Javascript\Mean\data --storageEngine=mmapv1 --port 27017
+mkdir data
+mongod --dbpath data --storageEngine=mmapv1 --port 27017

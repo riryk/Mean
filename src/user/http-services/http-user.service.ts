@@ -27,8 +27,8 @@ export class HttpUserService {
 
     private extractData(response: Observable<any>): Observable<any> {
         return response
-            .map((result) => result)
-            .catch((error) => {
+            .map(res => res.json())
+            .catch(error => {
                 const exception = {
                     status: error.status || 500,
                     statusText: error.statusText || '',

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpUserService } from '../../http-services';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../models';
@@ -8,13 +8,8 @@ import { User } from '../../models';
     templateUrl: './user-list.component.html',
     styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent implements OnInit {
-    users: Array<User>;
+export class UserListComponent {
+    @Input() public users: User[];
 
-    constructor(private httpUserService: HttpUserService) {}
-
-    public ngOnInit() {
-    	this.httpUserService.getUsers()
-            .subscribe(users => this.users = users);
-    }
+    constructor() {}
 }

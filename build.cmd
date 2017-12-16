@@ -1,1 +1,1 @@
-ng build --watch --poll
+ng build --watch --poll 2000
