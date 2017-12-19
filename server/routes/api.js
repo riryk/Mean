@@ -1,17 +1,27 @@
 const express = require('express');
 const router = express.Router();
+
+const processRequest = require('./api-base');
 const usersDataService = require('../services/data');
 
-router.get('/users', (request, response) => {
-    usersDataService.getUsers((error, users) => writeDataToResponse(error, users, response));
+router.get('/users', async (req, res) => {
+    await processRequest(async () => {
+        const users = await usersDataService.getUsers();
+
+        return users;
+    })(res);  
+});
+
+router.post('/users', async (req, res) => {
+    await processRequest(async () => {
+        const newUser = req.body.body;    
+
+        await usersDataService.insertUser(newUser);
+
+        const users = await usersDataService.getUsers();
+
+        return users;
+    })(res); 
 });
 
 module.exports = router;
-
-const writeDataToResponse = (error, data, response) => {
-    if (error) {
-        response.status(501).json(error.message);
-    } else {
-        response.status(200).json(data);
-    }
-};

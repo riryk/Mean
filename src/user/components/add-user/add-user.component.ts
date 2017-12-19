@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpUserService } from '../../http-services';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../../models';
+import { Store } from '@ngrx/store';
+import * as user from '../../declarations/actions';
 
 @Component({
     selector: 'add-user',
@@ -9,12 +11,18 @@ import { User } from '../../models';
     styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent {
-    private firstName: string;
-    private lastName: string;
+    public firstName = '';
+    public lastName = '';
 
-    constructor() {}
+    constructor(private store: Store<any>) {}
 
     public addUser(event) {
-    	console.log(event);
+        const newUser: User = {
+        	id: null,
+            firstName: this.firstName,
+            lastName: this.lastName
+        };
+
+    	this.store.dispatch(new user.AddUserAction(newUser));
     }
 }

@@ -12,7 +12,7 @@ import userEffects from './effects';
 
 import { HttpUserService } from './http-services';
 import { UserComponent } from './user.component';
-import { UserListComponent } from './components';
+import { AddUserComponent, UserListComponent } from './components';
 
 @NgModule({
     imports: [
@@ -25,10 +25,12 @@ import { UserListComponent } from './components';
     ],
     declarations: [
         UserComponent,
+        AddUserComponent,
         UserListComponent
     ],
     exports: [
         UserComponent,
+        AddUserComponent,
         UserListComponent
     ],
     providers: [

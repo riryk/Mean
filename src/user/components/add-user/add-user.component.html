@@ -1,6 +1,5 @@
 <div class="add-user">
-    Add:
-    First Name: <input [ngModel]="firstName"></input>
-    Last Name: <input [ngModel]="lastName"></input>
-    <button (click)="addUser($event)">Add user</button>
+    First Name: <input [(ngModel)]='firstName' />
+    Last Name: <input [(ngModel)]='lastName' />
+    <button (click)="addUser($event)">Save</button>
 </div>

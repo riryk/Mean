@@ -19,7 +19,7 @@ export class AddUserEffect {
     @Effect() addUserEffect: Observable<Action> = this.actions
         .ofType(user.AddUser)
         .switchMap((action: any) => {
-            return this.httpUserService.addUser(action.User)
+            return this.httpUserService.addUser(action.user)
                 .map((users: User[]) => new user.AddUserSuccessAction(users))
                 .catch((exception: Exception) => Observable.of(new user.AddUserFailedAction(exception)));
         });

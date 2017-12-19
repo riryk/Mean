@@ -15,7 +15,6 @@ export class UserComponent implements OnInit {
     constructor(private store: Store<any>) {
         this.users = store.select('users')
             .map((state) => {
-                debugger; 
                 return state.users;
             });
     }
