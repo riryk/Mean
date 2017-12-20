@@ -1,0 +1,35 @@
+.builder-profile {
+    color: #666;
+    padding: 2px 2px 2px 8px;
+    border-bottom: 1px solid #e6e6e6;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    vertical-align: top;
+    transition: border-color 500ms ease-in-out;
+
+    &__placeholder {
+        display: block;
+        color: #aaa;
+        height: 20px;
+        font-weight: 400;
+        font-size: 0.563rem;
+        transform: translate(0, 0);
+        transition: all 500ms; 
+    }
+
+    &__summary--text {
+        display:inline-block;
+        font-size: 0.663rem;
+        width: 100%;
+        color: #666;
+        line-height: 1.5em;
+        border: 1px solid #000;
+        background-color: transparent;
+        box-shadow: none;
+        white-space: pre-wrap;
+        margin: 0;
+        border-radius: 2px;
+        transition: min-height 500ms;
+    } 
+}
