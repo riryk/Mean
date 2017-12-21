@@ -7,24 +7,28 @@
     width: 100%;
     vertical-align: top;
     transition: border-color 500ms ease-in-out;
+    
+    &__focused {
+        border-bottom: 1px solid #0079BD;
+        transition: border-color 500ms ease-in-out;        
+    }
 
     &__placeholder {
         display: block;
         color: #aaa;
         height: 20px;
         font-weight: 400;
-        font-size: 0.563rem;
+        font-size: 0.663rem;
         transform: translate(0, 0);
         transition: all 500ms; 
     }
 
     &__summary--text {
         display:inline-block;
-        font-size: 0.663rem;
+        font-size: 0.963rem;
         width: 100%;
         color: #666;
-        line-height: 1.5em;
-        border: 1px solid #000;
+        line-height: 1.3rem;
         background-color: transparent;
         box-shadow: none;
         white-space: pre-wrap;
