@@ -21,19 +21,25 @@
         font-size: 0.663rem;
         transform: translate(0, 0);
         transition: all 500ms; 
+        padding-left: 4px;
     }
 
-    &__summary--text {
+    &__summary--text--edit {
         display:inline-block;
-        font-size: 0.963rem;
+        font-size: 1.163rem;
+        border: none;
+        resize: none;
+        overflow: hidden;
+        outline: none;
         width: 100%;
+        min-height: 100px;
         color: #666;
         line-height: 1.3rem;
         background-color: transparent;
         box-shadow: none;
         white-space: pre-wrap;
         margin: 0;
+        padding: 1px 1px 1px 4px;
         border-radius: 2px;
-        transition: min-height 500ms;
     } 
 }

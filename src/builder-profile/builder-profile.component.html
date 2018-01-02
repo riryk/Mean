@@ -1,12 +1,10 @@
 <div class="builder-profile"
-     tabindex="-1" 
-     (focus)="builderProfileOnFocus($event)" 
-     (focusout)="builderProfileOnFocusout($event)">
+     tabindex="-1">
     <label class="builder-profile__placeholder">
         Summary
     </label>
-    <div contentEditable="true" 
-         class="builder-profile__summary--text"
-         (focus)="builderProfileOnFocus($event)" 
-         (focusout)="builderProfileOnFocusout($event)"></div>
+    <textarea #summaryEditable
+        class="builder-profile__summary--text--edit" 
+        [(ngModel)]='summary'
+        (focusout)="toViewMode($event)"></textarea>
 </div>
