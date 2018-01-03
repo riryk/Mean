@@ -6,7 +6,7 @@ import { Store } from '@ngrx/store';
     templateUrl: './builder-profile.component.html',
     styleUrls: ['./builder-profile.component.scss']
 })
-export class BuilderProfileComponent implements OnInit {
+export class BuilderProfileComponent {
 	@ViewChild('summaryEditable') summaryElement: ElementRef;
 
     private isEditable: boolean;
@@ -14,13 +14,9 @@ export class BuilderProfileComponent implements OnInit {
 
     constructor(private store: Store<any>) {
     	this.isEditable = false;
-    	this.summary = "I am a Master craftsmen, with over 40 years experiance within the construction industry. The past twenty years i have worked in partnership with my brother and built up an excellent reputation for all works completed. My portfolio on mybuilder has been live since 2009 where the predominant work flow has focused on household works opposed to commerical. With over 200 jobs undertaken for a variety of projects as well sound advice i believe my customer feedback speaks for itself.";
     }
 
-    public ngOnInit() {
-    }
-
-    toEditMode() {
+    toEditMode(event: any) {
     	this.isEditable = true;  
     }
 
@@ -28,5 +24,17 @@ export class BuilderProfileComponent implements OnInit {
         this.isEditable = false;  
     }
 
-    //https://github.com/chrum/angular2-autosize/blob/master/src/autosize.directive.ts
+    onSummaryTextChanged(event: any) {
+        this.adjustSummaryHeight();
+    }
+
+    adjustSummaryHeight() {
+        if (!this.summaryElement) {
+            return;
+        }
+
+        let summaryNativeElement = this.summaryElement.nativeElement;
+        summaryNativeElement.style.height = 'auto';
+        summaryNativeElement.style.height = summaryNativeElement.scrollHeight + "px";
+    }
 }

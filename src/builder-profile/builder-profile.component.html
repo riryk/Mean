@@ -1,4 +1,5 @@
 <div class="builder-profile"
+     [ngClass]="{'builder-profile__focused':isEditable}"
      tabindex="-1">
     <label class="builder-profile__placeholder">
         Summary
@@ -6,5 +7,7 @@
     <textarea #summaryEditable
         class="builder-profile__summary--text--edit" 
         [(ngModel)]='summary'
+        (ngModelChange)="onSummaryTextChanged($event)"
+        (focus)="toEditMode($event)"
         (focusout)="toViewMode($event)"></textarea>
 </div>

@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { SharedModule } from '../shared';
 import { BuilderProfileComponent } from './builder-profile.component';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { BuilderProfileComponent } from './builder-profile.component';
         CommonModule,
         HttpModule,
         FormsModule,
+        SharedModule,
         ReactiveFormsModule
     ],
     declarations: [
