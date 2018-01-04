@@ -1,13 +1,29 @@
-<div class="builder-profile"
-     [ngClass]="{'builder-profile__focused':isEditable}"
-     tabindex="-1">
-    <label class="builder-profile__placeholder">
-        Summary
-    </label>
-    <textarea #summaryEditable
-        class="builder-profile__summary--text--edit" 
-        [(ngModel)]='summary'
-        (ngModelChange)="onSummaryTextChanged($event)"
-        (focus)="toEditMode($event)"
-        (focusout)="toViewMode($event)"></textarea>
+<div class="builder-profile">
+    <div class="builder-profile__section"
+        [ngClass]="{'builder-profile__summary__focused':isSummaryEditable}"
+        tabindex="-1">
+        <label class="builder-profile__section__placeholder">
+            Summary
+        </label>
+        <textarea #summaryEditable auto-resize
+            class="builder-profile__summary__edit" 
+            [(ngModel)]='summary'
+            (focus)="editSummary($event)"
+            (focusout)="viewSummary($event)"></textarea>    
+    </div>
+    <br/>
+    <div class="builder-profile__section">
+        <label class="builder-profile__section__placeholder">
+            Trades
+        </label>
+        <div class="builder-profile__trades__edit">
+            <div *ngFor="let trade of trades">
+                <label class="c-checkbox-sm c-m-left-lg comment-alerting__label">
+                    <input type="checkbox" class="comment-alerting__body__user-selector" name="radio">
+                    <i class="c-bg-primary"></i>
+                    <span class="c-m-left-sm">{{trade.name}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
 </div>

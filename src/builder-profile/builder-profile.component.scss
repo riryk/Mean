@@ -1,44 +1,56 @@
 .builder-profile {
-    color: #666;
-    padding: 2px 2px 2px 8px;
-    border-bottom: 1px solid #e6e6e6;
-    white-space: nowrap;
-    display: block;
-    width: 100%;
-    vertical-align: top;
-    transition: border-color 500ms ease-in-out;
-    
-    &__focused {
-        border-bottom: 1px solid #0079BD;
-        transition: border-color 500ms ease-in-out;        
-    }
-
-    &__placeholder {
-        display: block;
-        color: #aaa;
-        height: 20px;
-        font-weight: 400;
-        font-size: 0.663rem;
-        transform: translate(0, 0);
-        transition: all 500ms; 
-        padding-left: 4px;
-    }
-
-    &__summary--text--edit {
-        display:inline-block;
-        font-size: 1.163rem;
-        border: none;
-        resize: none;
-        overflow: hidden;
-        outline: none;
-        width: 100%;
+    &__section {
         color: #666;
-        line-height: 1.3rem;
-        background-color: transparent;
-        box-shadow: none;
-        white-space: pre-wrap;
-        margin: 0;
-        padding: 1px 1px 1px 4px;
-        border-radius: 2px;
-    } 
+        border-bottom: 1px solid #e6e6e6;
+        white-space: nowrap;
+        display: block;
+        width: 100%;
+        vertical-align: top;
+        transition: border-color 500ms ease-in-out;
+
+        &__placeholder {
+            display: block;
+            font-size: 0.8em;
+            color: #aaa;
+            height: 20px;
+            transform: translate(0, 0);
+            transition: all 500ms; 
+            padding-left: 4px;
+        }
+    }
+
+    &__summary {
+        &__focused {
+            border-bottom: 1px solid #0079BD;
+            transition: border-color 500ms ease-in-out;        
+        }
+
+        &__edit {
+            display:inline-block;
+            border: none;
+            resize: none;
+            overflow: hidden;
+            outline: none;
+            width: 100%;
+            color: #666;
+            background-color: transparent;
+            box-shadow: none;
+            white-space: pre-wrap;
+            margin: 0;
+            padding: 1px 1px 4px 4px;
+            border-radius: 2px;
+            font: normal 0.9em/1.5em "Trebuchet MS","Segoe UI",Candara,"Bitstream Vera Sans","DejaVu Sans","Bitstream Vera Sans",Verdana,"Verdana Ref",sans-serif;
+        }  
+    }
+
+    &__trades {
+        &__view {
+        }
+
+        &__edit {
+            color: #666;
+            font-size: 0.9em;
+            line-height: 1.5em;
+        }
+    }
 }

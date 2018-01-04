@@ -31,7 +31,6 @@ export class AutoResizeDirective implements OnInit, OnDestroy, AfterViewInit {
 
         this.modelSubscription = this.model
             .valueChanges
-            .debounceTime(100)
             .subscribe(() => this.adjustTextAreaSize());
     }
 

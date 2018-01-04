@@ -7,34 +7,25 @@ import { Store } from '@ngrx/store';
     styleUrls: ['./builder-profile.component.scss']
 })
 export class BuilderProfileComponent {
-	@ViewChild('summaryEditable') summaryElement: ElementRef;
-
-    private isEditable: boolean;
+    private isSummaryEditable: boolean;
     private summary: string;
+    private trades: Array<any>;
 
     constructor(private store: Store<any>) {
-    	this.isEditable = false;
+    	this.isSummaryEditable = false;
+        this.trades = [
+            { name: 'Bricklayer' },
+            { name: 'Damp Proofing Specialist' },
+            { name: 'Groundworker' },
+            { name: 'Stonemason' },
+            { name: 'Demolition Contractor' }];
     }
 
-    toEditMode(event: any) {
-    	this.isEditable = true;  
+    editSummary(event: any) {
+    	this.isSummaryEditable = true;  
     }
 
-    toViewMode(event: any) {
-        this.isEditable = false;  
-    }
-
-    onSummaryTextChanged(event: any) {
-        this.adjustSummaryHeight();
-    }
-
-    adjustSummaryHeight() {
-        if (!this.summaryElement) {
-            return;
-        }
-
-        let summaryNativeElement = this.summaryElement.nativeElement;
-        summaryNativeElement.style.height = 'auto';
-        summaryNativeElement.style.height = summaryNativeElement.scrollHeight + "px";
+    viewSummary(event: any) {
+        this.isSummaryEditable = false;  
     }
 }

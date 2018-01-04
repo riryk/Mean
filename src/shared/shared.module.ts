@@ -11,6 +11,9 @@ import { AutoResizeDirective } from './directives';
         CommonModule,
         FormsModule
     ],
+    declarations: [
+        AutoResizeDirective
+    ],
     exports: [
         AutoResizeDirective
     ],
