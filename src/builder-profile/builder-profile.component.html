@@ -16,12 +16,12 @@
         <label class="builder-profile__section__placeholder">
             Trades
         </label>
-        <div class="builder-profile__trades__edit">
-            <div *ngFor="let trade of trades">
-                <label class="c-checkbox-sm c-m-left-lg comment-alerting__label">
-                    <input type="checkbox" class="comment-alerting__body__user-selector" name="radio">
+        <div class="builder-profile__trade__edit">
+            <div *ngFor="let trade of trades" class="builder-profile__trade__edit__option">
+                <label class="c-checkbox-sm">
+                    <input type="checkbox" class="builder-profile__trade__edit__checker" name="radio">
                     <i class="c-bg-primary"></i>
-                    <span class="c-m-left-sm">{{trade.name}}</span>
+                    <span class="builder-profile__trade__edit__option--name">{{trade.name}}</span>
                 </label>
             </div>
         </div>

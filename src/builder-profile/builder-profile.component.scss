@@ -1,6 +1,8 @@
 .builder-profile {
+    $text-color: #666;
+
     &__section {
-        color: #666;
+        color: $text-color;
         border-bottom: 1px solid #e6e6e6;
         white-space: nowrap;
         display: block;
@@ -32,7 +34,7 @@
             overflow: hidden;
             outline: none;
             width: 100%;
-            color: #666;
+            color: $text-color;
             background-color: transparent;
             box-shadow: none;
             white-space: pre-wrap;
@@ -43,14 +45,30 @@
         }  
     }
 
-    &__trades {
+    &__trade {
         &__view {
         }
 
         &__edit {
-            color: #666;
+            color: $text-color;
             font-size: 0.9em;
             line-height: 1.5em;
+            
+            &__option {
+                margin-top: 5px;
+            }
+
+            &__checker {
+                position: relative;
+                display: none;
+            }
+
+            &__option--name {
+                margin-left: 5px;   
+            }
         }
     }
 }
+
+
+
