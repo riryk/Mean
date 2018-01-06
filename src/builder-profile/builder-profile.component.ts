@@ -15,9 +15,14 @@ export class BuilderProfileComponent {
     	this.isSummaryEditable = false;
         this.trades = [
             { name: 'Bricklayer' },
+            { name: 'Groundworker' },
+            { name: 'Driveway Paver' },
+            { name: 'Extension Builder' },
+            { name: 'Fencer' },
             { name: 'Damp Proofing Specialist' },
             { name: 'Groundworker' },
             { name: 'Stonemason' },
+            { name: 'Landscape Gardener' },
             { name: 'Demolition Contractor' }];
     }
 

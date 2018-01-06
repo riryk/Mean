@@ -50,6 +50,8 @@
         }
 
         &__edit {
+            height: 100px;
+            overflow-y: scroll;
             color: $text-color;
             font-size: 0.9em;
             line-height: 1.5em;
