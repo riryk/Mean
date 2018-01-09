@@ -21,7 +21,7 @@
       "styles": [
         "styles.scss",
         "../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css",
-        "app/scrollbar/metro.theme.scss"
+        "app/scrollbar-demo/metro.theme.scss"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",

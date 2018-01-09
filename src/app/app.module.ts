@@ -16,6 +16,10 @@ import {
     BuilderProfileWrapComponent
 } from './components';
 
+import { SharedModule } from '../shared';
+
+import { MalihuScrollbarDemoComponent } from './scrollbar-demo/malihu-scrollbar-demo.component'
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -23,6 +27,7 @@ import {
         UserModule,
         BuilderProfileModule,
         routing,
+        SharedModule,
         StoreModule.forRoot({
             routerReducer: () => {
             }
@@ -32,7 +37,8 @@ import {
     declarations: [
         AppComponent,
         UserWrapComponent,
-        BuilderProfileWrapComponent
+        BuilderProfileWrapComponent,
+        MalihuScrollbarDemoComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

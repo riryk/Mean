@@ -1,0 +1,12 @@
+<main>
+  <div
+    *ngFor="let theme of themes"
+    class="{{ theme.class }}"
+    scrollbar
+    [scrollbarOptions]="theme.options"
+  >
+    <hr>
+    {{ loremIpsum }}
+    <hr>
+  </div>
+</main>

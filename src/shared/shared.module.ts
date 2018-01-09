@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-import { AutoResizeDirective } from './directives';
+import { AutoResizeDirective, ScrollbarService, ScrollbarDirective } from './directives';
 
 @NgModule({
     imports: [
@@ -12,12 +12,15 @@ import { AutoResizeDirective } from './directives';
         FormsModule
     ],
     declarations: [
-        AutoResizeDirective
+        AutoResizeDirective,
+        ScrollbarDirective,
     ],
     exports: [
-        AutoResizeDirective
+        AutoResizeDirective,
+        ScrollbarDirective
     ],
     providers: [
+        ScrollbarService
     ]
 })
 export class SharedModule {

@@ -5,9 +5,12 @@ import {
     BuilderProfileWrapComponent
 } from './components';
 
+import { MalihuScrollbarDemoComponent } from './scrollbar-demo/malihu-scrollbar-demo.component';
+
 export const routes: Routes = [
     { path: 'user', component: UserWrapComponent },
     { path: 'builder', component: BuilderProfileWrapComponent },
+    { path: 'scrollbar', component: MalihuScrollbarDemoComponent },
     { path: '**', redirectTo: '/builder' }
 ];
 
