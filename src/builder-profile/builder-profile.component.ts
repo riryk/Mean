@@ -2,34 +2,28 @@ import { Component, ViewChild, OnInit, AfterViewInit, ElementRef } from '@angula
 import { Store } from '@ngrx/store';
 import { ScrollbarService } from '../shared/directives/scrollbar';
 
-interface ITheme {
-    name: string;
-    class: string;
-    options: MCustomScrollbar.CustomScrollbarOptions;
-}
-
 @Component({
     selector: 'builder-profile',
     templateUrl: './builder-profile.component.html',
     styleUrls: ['./builder-profile.component.scss']
 })
 export class BuilderProfileComponent {
-    private isSummaryEditable: boolean;
     private summary: string;
+    private isSummaryEditable: boolean;
+
     private trades: Array<any>;
-    
-    loremIpsum = require('raw-loader!./input.txt');
-    theme: ITheme = {
-        name: '"light" (default)',
-        class: 'dark',
-        options: { axis: 'y', theme: 'light', scrollButtons: { enable: true } }
-    };
+    private availableTrades: Array<any>;
+    private areTradesEditable: boolean;
+
+    private scrollbarOptions: any;
 
     constructor(
         private store: Store<any>, 
         private scrollbarService: ScrollbarService) {
+
     	this.isSummaryEditable = false;
-        this.trades = [
+
+        this.availableTrades = [
             { name: 'Bricklayer' },
             { name: 'Groundworker' },
             { name: 'Driveway Paver' },
@@ -40,10 +34,20 @@ export class BuilderProfileComponent {
             { name: 'Stonemason' },
             { name: 'Landscape Gardener' },
             { name: 'Demolition Contractor' }];
+
+        this.trades = ['Bricklayer', 'Groundworker', 'Fencer', 'Stonemason'];
+        this.areTradesEditable = false;
+
+        this.scrollbarOptions = {
+            axis: 'y', 
+            theme: 'metro', 
+            scrollButtons: { 
+                enable: true 
+            }
+        };
     }
     
     ngOnInit() {
-        this.scrollbarService.initScrollbar(document.body, { axis: 'y', theme: 'metro' });
     }
 
     editSummary(event: any) {
@@ -52,5 +56,13 @@ export class BuilderProfileComponent {
 
     viewSummary(event: any) {
         this.isSummaryEditable = false;  
+    }
+
+    editTrades() {
+        this.areTradesEditable = true;  
+    }
+
+    viewTrades() {
+        this.areTradesEditable = false;  
     }
 }

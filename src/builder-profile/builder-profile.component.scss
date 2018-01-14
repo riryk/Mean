@@ -8,7 +8,13 @@
         display: block;
         width: 100%;
         vertical-align: top;
+        padding-bottom:5px;
         transition: border-color 500ms ease-in-out;
+
+        &__focused {
+            border-bottom: 1px solid #0079BD;
+            transition: border-color 500ms ease-in-out; 
+        }
 
         &__placeholder {
             display: block;
@@ -22,11 +28,6 @@
     }
 
     &__summary {
-        &__focused {
-            border-bottom: 1px solid #0079BD;
-            transition: border-color 500ms ease-in-out;        
-        }
-
         &__edit {
             display:inline-block;
             border: none;
@@ -46,28 +47,33 @@
     }
 
     &__trade {
+        width: 100%;
+        height: 100px;
+        color: $text-color;
+        font-size: 0.9em;
+        line-height: 1.5em;
+    
         &__view {
+            float: right;
+            width: 70%;
         }
 
         &__edit {
-            height: 100px;
-            overflow-y: scroll;
-            color: $text-color;
-            font-size: 0.9em;
-            line-height: 1.5em;
-            
-            &__option {
-                margin-top: 5px;
-            }
+            float: right;
+            width: 75%;
+        }
 
-            &__checker {
-                position: relative;
-                display: none;
-            }
+        &__option {
+            margin-top: 5px;
+        }
 
-            &__option--name {
-                margin-left: 5px;   
-            }
+        &__checker {
+            position: relative;
+            display: none;
+        }
+
+        &__option--name {
+            margin-left: 5px;   
         }
     }
 
@@ -76,7 +82,11 @@
         height: 300px;
         max-height: 300px;
     }
+
+    &__scrollbar {
+        height: 500px;
+        line-height: 24px;
+        max-height: 500px;
+        padding: 16px;
+    } 
 }
-
-
-

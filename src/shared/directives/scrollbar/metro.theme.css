@@ -3,16 +3,16 @@
 }
 
 .mCS-metro.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar { 
-  background-color: #000; background-color: rgba(0,0,0,0.75); 
+  background-color: #000; background-color: rgba(0,0,0,0.5); 
 }
 
 .mCS-metro.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar { 
-  background-color: red; 
+  background-color: #808080; 
 }
 
 .mCS-metro.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar,
 .mCS-metro.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar { 
-  background-color: rgba(0,0,0,0.9); 
+  background-color: #787878; 
 }
 
 .mCS-metro.mCSB_scrollTools .mCSB_buttonUp { 

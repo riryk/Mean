@@ -18,8 +18,6 @@ import {
 
 import { SharedModule } from '../shared';
 
-import { MalihuScrollbarDemoComponent } from './scrollbar-demo/malihu-scrollbar-demo.component'
-
 @NgModule({
     imports: [
         BrowserModule,
@@ -37,8 +35,7 @@ import { MalihuScrollbarDemoComponent } from './scrollbar-demo/malihu-scrollbar-
     declarations: [
         AppComponent,
         UserWrapComponent,
-        BuilderProfileWrapComponent,
-        MalihuScrollbarDemoComponent
+        BuilderProfileWrapComponent
     ],
     providers: [],
     bootstrap: [AppComponent]

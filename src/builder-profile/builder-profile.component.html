@@ -1,6 +1,6 @@
 <div class="builder-profile">
     <div class="builder-profile__section"
-        [ngClass]="{'builder-profile__summary__focused':isSummaryEditable}"
+        [ngClass]="{'builder-profile__section__focused':isSummaryEditable}"
         tabindex="-1">
         <label class="builder-profile__section__placeholder">
             Summary
@@ -12,26 +12,31 @@
             (focusout)="viewSummary($event)"></textarea>    
     </div>
     <br/>
-    <div class="builder-profile__section">
+    <div class="builder-profile__section"
+         [ngClass]="{'builder-profile__section__focused':areTradesEditable}" 
+         (click)="editTrades()">
         <label class="builder-profile__section__placeholder">
             Trades
         </label>
-        <div class="builder-profile__trade__edit">
-            <div *ngFor="let trade of trades" class="builder-profile__trade__edit__option">
-                <label class="c-checkbox-sm">
-                    <input type="checkbox" class="builder-profile__trade__edit__checker" name="radio">
-                    <i class="c-bg-primary"></i>
-                    <span class="builder-profile__trade__edit__option--name">{{trade.name}}</span>
-                </label>
+        <div class="builder-profile__trade">
+            <div class="builder-profile__trade__view"
+                 *ngIf="!areTradesEditable">
+                <div *ngFor="let trade of trades">
+                    {{trade}}
+                </div>
+            </div>
+            <div class="builder-profile__trade__edit"
+                 scrollbar 
+                 [scrollbarOptions]="scrollbarOptions"
+                 *ngIf="areTradesEditable">
+                <div *ngFor="let trade of availableTrades" class="builder-profile__trade__edit__option">
+                    <label class="c-checkbox-sm">
+                        <input type="checkbox" class="builder-profile__trade__edit__checker" name="radio">
+                        <i class="c-bg-primary"></i>
+                        <span class="builder-profile__trade__edit__option--name">{{trade.name}}</span>
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
-    <div 
-        class="builder-profile__test--div col-xs-12 col-sm-6 col-md-4 col-lg-3"
-        scrollbar
-        [scrollbarOptions]="theme.options">
-        <h3>{{ theme.name }}</h3>
-        <hr>{{ loremIpsum }}<hr>
-        End of content.
     </div>
 </div>
