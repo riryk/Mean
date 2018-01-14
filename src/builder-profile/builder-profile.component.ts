@@ -58,11 +58,11 @@ export class BuilderProfileComponent {
         this.isSummaryEditable = false;  
     }
 
-    editTrades() {
+    editTrades(event: any) {
         this.areTradesEditable = true;  
     }
 
-    viewTrades() {
+    viewTrades(event: any) {
         this.areTradesEditable = false;  
     }
 }

@@ -14,7 +14,8 @@
     <br/>
     <div class="builder-profile__section"
          [ngClass]="{'builder-profile__section__focused':areTradesEditable}" 
-         (click)="editTrades()">
+         (click)="editTrades()"
+         (clickOutside)="viewTrades()">
         <label class="builder-profile__section__placeholder">
             Trades
         </label>
